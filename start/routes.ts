@@ -8,10 +8,12 @@
 */
 
 import router from '@adonisjs/core/services/router'
+import { ReturnQuote } from "../app/ReturnQuote.js";
 
 router.get('/', async () => {
+	const quote = ReturnQuote();
 	return {
-		author: "Rafael Corrêa Gomes",
-		quote: "The only way to do great work is to love what you do."
+		author: quote.Author,
+		quote: quote.Quote,
 	}
 })
